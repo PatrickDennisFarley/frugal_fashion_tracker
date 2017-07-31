@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :profile_photo, ProfilePhotoUploader
   has_many :user_criteria
   has_many :criteria, through: :user_criteria
 

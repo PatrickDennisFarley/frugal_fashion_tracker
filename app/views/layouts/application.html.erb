@@ -27,7 +27,7 @@
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li class="menu-text"><%= current_user.username %></li>
             <% if current_user.profile_photo == nil %>
-              <% current_user.profile_photo = "/uploads/user/profile_photo/75/featmeme.jpg" %>
+              <% current_user.profile_photo = "/uploads/user/profile_photo/75/T-Shirt-icon.png" %>
             <% else %>
               <%= image_tag current_user.profile_photo, :class => "profile-photo" %>
             <% end %>
