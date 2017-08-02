@@ -33,3 +33,8 @@ a {
 .deal-text {
   color: teal;
 }
+
+.sub-menu-text {
+  text-align: justify;
+  font-weight: bold;
+}
