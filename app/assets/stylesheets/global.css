@@ -1,0 +1,19 @@
+.profile-photo {
+  width: 45px;
+  height: 45px;
+}
+
+body {
+  background-image: url("http://tdsblog.com/wp-content/uploads/2017/06/Image-Socialyte.jpeg");
+  background-size: cover;
+}
+
+.tile-box {
+  background-color: white;
+  opacity: 0.90;
+  padding: 50px;
+}
+
+.deal-box {
+  background-color: white;
+}
