@@ -1,0 +1,17 @@
+</br>
+<h1>Custom Reviews Page</h1>
+</br>
+<p>Keywords: </p>
+<ul>
+  <% @keywords.each do |keyword| %>
+  <li><%=keyword%></li>
+  <% end %>
+</ul>
+<% @reviews.each do |review| %>
+  <div class="callout">
+     <h3><%=review.title%> </h3>
+     <a href=`<%=review.url%>`>URL: <%=review.url%></a>
+     <p>Link Flair: <%= review.link_flair_text %></p>
+     <p>Created at: <%= Time.at(review.created) %></p>
+   </div>
+<% end%>
