@@ -5,9 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'redd'
-gem 'middleware'
 gem 'active_model_serializers'
+gem 'middleware'
+gem 'redd'
 gem 'carrierwave'
 gem 'devise'
 gem 'mini_magick', '~> 4.3'
@@ -19,8 +19,8 @@ gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'rails-assets-foundation', source: 'https://rails-assets.org'
@@ -29,8 +29,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
   gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'capybara'
+  gem 'rspec-rails'
   gem 'launchy'
   gem 'factory_girl'
   gem 'valid_attribute'

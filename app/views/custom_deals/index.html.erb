@@ -1,17 +1,19 @@
 </br>
-<h1>Custom Deals Page</h1>
-</br>
-<p>Keywords: </p>
-<ul>
-  <% @keywords.each do |keyword| %>
-    <li><%=keyword%></li>
-  <% end %>
-</ul>
-<% @deals.each do |deal| %>
-  <div class="callout">
-     <h3><%=deal.title%> </h3>
-     <a href=`<%=deal.url%>`>URL: <%=deal.url%></a>
-     <p>Link Flair: <%= deal.link_flair_text %></p>
-     <p>Created at: <%= Time.at(deal.created) %></p>
-   </div>
-<% end%>
+<div class="tile-box">
+  <h1>Custom Deals Page</h1>
+  </br>
+  <p>Keywords: </p>
+  <ul>
+    <% @keywords.each do |keyword| %>
+      <li><%=keyword%></li>
+    <% end %>
+  </ul>
+  <% @deals.each do |deal| %>
+    <div class="callout">
+       <h3><%=deal.title%> </h3>
+       <a href=`<%=deal.url%>`>URL: <%=deal.url%></a>
+       <p>Link Flair: <%= deal.link_flair_text %></p>
+       <p>Created at: <%= Time.at(deal.created) %></p>
+     </div>
+  <% end%>
+</div>

@@ -1,17 +1,19 @@
 </br>
-<h1>Custom Discussions Page</h1>
-</br>
-<p>Keywords: </p>
-<ul>
-  <% @keywords.each do |keyword| %>
-  <li><%=keyword%></li>
-  <% end %>
-</ul>
-<% @discussions.each do |discussion| %>
-  <div class="callout">
-     <h3><%=discussion.title%> </h3>
-     <a href=`<%=discussion.url%>`>URL: <%=discussion.url%></a>
-     <p>Link Flair: <%= discussion.link_flair_text %></p>
-     <p>Created at: <%= Time.at(discussion.created) %></p>
-   </div>
-<% end%>
+<div class="tile-box">
+  <h1>Custom Discussions Page</h1>
+  </br>
+  <p>Keywords: </p>
+  <ul>
+    <% @keywords.each do |keyword| %>
+    <li><%=keyword%></li>
+    <% end %>
+  </ul>
+  <% @discussions.each do |discussion| %>
+    <div class="callout">
+       <h3><%=discussion.title%> </h3>
+       <a href=`<%=discussion.url%>`>URL: <%=discussion.url%></a>
+       <p>Link Flair: <%= discussion.link_flair_text %></p>
+       <p>Created at: <%= Time.at(discussion.created) %></p>
+     </div>
+  <% end%>
+</div>

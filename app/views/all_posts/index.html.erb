@@ -1,14 +1,12 @@
 </br>
-<h1>All Posts</h1>
 <div class="tile-box">
+<h1>All Posts</h1>
 <% @deals.each do |deal| %>
   <div class="callout">
-    <div class="deal-box">
       <h3><%=deal.title%> </h3>
       <a href=`<%=deal.url%>`>URL: <%=deal.url%></a>
       <p>Link Flair: <%= deal.link_flair_text %></p>
       <p>Created at: <%= Time.at(deal.created) %></p>
-    </div>
    </div>
 <% end%>
 </div>

@@ -1,10 +1,18 @@
 </br>
-<h1>All Discussions</h1>
-<% @discussions.each do |discussion| %>
-  <div class="callout">
-     <h3><%=discussion.title%> </h3>
-     <a href=`<%=discussion.url%>`>URL: <%=discussion.url%></a>
-     <p>Link Flair: <%= discussion.link_flair_text %></p>
-     <p>Created at: <%= Time.at(deal.created) %></p>
-   </div>
-<% end%>
+<div class="tile-box">
+  <h1>All Discussions</h1>
+  <% if @discussions.empty? %>
+    <div class="empty-page">
+      There are no new Discussions right now, check back later
+    </div>
+  <% else %>
+    <% @discussions.each do |discussion| %>
+      <div class="callout">
+         <h3><%=discussion.title%> </h3>
+         <a href=`<%=discussion.url%>`>URL: <%=discussion.url%></a>
+         <p>Link Flair: <%= discussion.link_flair_text %></p>
+         <p>Created at: <%= Time.at(discussion.created) %></p>
+       </div>
+    <% end%>
+  <% end %>
+</div>
