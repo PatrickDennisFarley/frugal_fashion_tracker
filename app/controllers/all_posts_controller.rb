@@ -16,7 +16,7 @@ class AllPostsController < ApplicationController
 
     @deals = []
     sales.each do |sale|
-        @deals << sale
+      @deals << sale
     end
   end
 end
