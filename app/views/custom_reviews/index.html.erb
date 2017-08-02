@@ -1,17 +1,26 @@
 </br>
-<h1>Custom Reviews Page</h1>
-</br>
-<p>Keywords: </p>
-<ul>
-  <% @keywords.each do |keyword| %>
-  <li><%=keyword%></li>
-  <% end %>
-</ul>
-<% @reviews.each do |review| %>
-  <div class="callout">
-     <h3><%=review.title%> </h3>
-     <a href=`<%=review.url%>`>URL: <%=review.url%></a>
-     <p>Link Flair: <%= review.link_flair_text %></p>
-     <p>Created at: <%= Time.at(review.created) %></p>
-   </div>
-<% end%>
+<div class="tile-box">
+  <div class="row">
+    <ul class="menu horizontal">
+      <li><a class="sub-menu-text" href="/custom_posts">Custom Posts</a></li>
+      <li><a class="sub-menu-text" href="/custom_deals">Custom Deals</a></li>
+      <li><a class="sub-menu-text" href="/custom_discussions">Custom Discussions</a></li>
+    </ul>
+  </div>
+  <h1>Custom Reviews Page</h1>
+  </br>
+  <p>Keywords: </p>
+  <ul>
+    <% @keywords.each do |keyword| %>
+    <li><%=keyword%></li>
+    <% end %>
+  </ul>
+  <% @reviews.each do |review| %>
+    <div class="callout">
+       <h3><%=review.title%> </h3>
+       <a class="deal-text" href=`<%=review.url%>`>URL: <%=review.url%></a>
+       <p>Link Flair: <%= review.link_flair_text %></p>
+       <p>Created at: <%= Time.at(review.created) %></p>
+     </div>
+  <% end%>
+</div>
