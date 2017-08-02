@@ -17,3 +17,19 @@ body {
 .deal-box {
   background-color: white;
 }
+
+ul.menu {
+  background-color: #333333;
+}
+
+.menu .menu-text {
+  color: cyan;
+}
+
+a {
+  color: cyan;
+}
+
+.deal-text {
+  color: teal;
+}
