@@ -23,7 +23,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.5'
-gem 'coveralls', require: false
 gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
