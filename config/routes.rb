@@ -12,4 +12,18 @@ Rails.application.routes.draw do
   resources :custom_reviews
   resources :custom_discussions
 
+  namespace :api do
+    namespace :v1 do
+      resources :posts do
+        get 'all_posts', on: :collection
+        get 'custom_deals', on: :collection
+        get 'custom_reviews', on: :collection
+        get 'custom_discussions', on: :collection
+        get 'custom_posts', on: :collection
+        get 'deals', on: :collection
+        get 'discussions', on: :collection
+        get 'reviews', on: :collection
+      end
+    end
+  end
 end
