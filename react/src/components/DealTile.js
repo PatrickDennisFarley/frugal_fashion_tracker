@@ -17,9 +17,6 @@ const DealTile = (props) => {
       </div>
     </div>
   )
-
-
-
 }
 
 export default DealTile;
