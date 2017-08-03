@@ -1,4 +1,5 @@
 import React, {Component } from 'react';
+import { Link } from 'react-router';
 import DealTile from '../components/DealTile';
 
 class DiscussionsIndexContainer extends Component {
@@ -13,7 +14,7 @@ class DiscussionsIndexContainer extends Component {
     fetch('/api/v1/posts/discussions')
     .then(response => response.json())
     .then(body => {
-      this.setState({ deals: body.deals})
+      this.setState({ deals: body.sales})
     })
   }
 
@@ -34,9 +35,9 @@ class DiscussionsIndexContainer extends Component {
       <div className="tile-box">
         <div className="row">
           <ul className="menu horizontal">
-            <li><a className="sub-menu-text" href="/all_posts">All Posts</a></li>
-            <li><a className="sub-menu-text" href="/deals">All Deals</a></li>
-            <li><a className="sub-menu-text" href="/reviews">All Reviews</a></li>
+            <li><Link className="sub-menu-text" href="/all_posts">All Posts</Link></li>
+            <li><Link className="sub-menu-text" href="/deals">All Deals</Link></li>
+            <li><Link className="sub-menu-text" href="/reviews">All Reviews</Link></li>
           </ul>
         </div>
         <h1>All Discussions</h1>
