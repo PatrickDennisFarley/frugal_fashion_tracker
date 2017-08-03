@@ -16,7 +16,7 @@ gem 'fog'
 gem 'fog-aws'
 gem 'rails', '~> 5.1.2'
 gem 'jquery-rails'
-gem 'pg', '~> 0.18'
+# gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.2'
@@ -27,6 +27,7 @@ gem 'coveralls', require: false
 gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 
 group :development, :test do
+  gem 'sqlite3', '1.3.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
   gem 'pry-rails'
@@ -43,6 +44,10 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'pg', '0.20.0'
 end
 
 group :test do
