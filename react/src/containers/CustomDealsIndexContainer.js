@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import { Link } from 'react-router';
 import DealTile from '../components/DealTile';
+import KeywordBar from '../components/KeywordBar';
 
 class CustomDealsIndexContainer extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class CustomDealsIndexContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/posts/custom_deals')
+    fetch('/api/v1/posts/custom_deals',{credentials: 'same-origin' })
     .then(response => response.json())
     .then(body => {
       this.setState({ deals: body.sales})
@@ -41,6 +42,7 @@ class CustomDealsIndexContainer extends Component {
           </ul>
         </div>
         <h1>Custom Deals Page</h1>
+        <KeywordBar />
         {deals}
       </div>
     )

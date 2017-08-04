@@ -24,6 +24,7 @@ Rails.application.routes.draw do
         get 'discussions', on: :collection
         get 'reviews', on: :collection
       end
+      resources :queries, only: [:create, :index]
     end
   end
 end
