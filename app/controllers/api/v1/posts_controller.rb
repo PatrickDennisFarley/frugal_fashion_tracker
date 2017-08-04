@@ -30,7 +30,11 @@ class Api::V1::PostsController < ApplicationController
       password:   'hv3kk444'
     )
 
-    @keywords = ["J.Crew", "Uniqlo"]
+    queries = Query.where(user_id: current_user.id)
+    @keywords = []
+    queries.each do |query|
+      @keywords << query.body
+    end
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
@@ -56,7 +60,11 @@ class Api::V1::PostsController < ApplicationController
       password:   'hv3kk444'
     )
 
-    @keywords = ["Finish Line", "J.Crew", "Uniqlo"]
+    queries = Query.where(user_id: current_user.id)
+    @keywords = []
+    queries.each do |query|
+      @keywords << query.body
+    end
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
@@ -81,8 +89,11 @@ class Api::V1::PostsController < ApplicationController
       username:   'the4oclockhero',
       password:   'hv3kk444'
     )
-
-    @keywords = ["J.Crew", "Uniqlo"]
+    queries = Query.where(user_id: current_user.id)
+    @keywords = []
+    queries.each do |query|
+      @keywords << query.body
+    end
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
@@ -106,7 +117,11 @@ class Api::V1::PostsController < ApplicationController
       password:   'hv3kk444'
     )
 
-    @keywords = ["Finish Line", "J.Crew", "Uniqlo"]
+    queries = Query.where(user_id: current_user.id)
+    @keywords = []
+    queries.each do |query|
+      @keywords << query.body
+    end
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
