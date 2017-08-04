@@ -1,6 +1,4 @@
 require 'redd'
-require 'date'
-require 'pry'
 
 class Api::V1::PostsController < ApplicationController
   def all_posts
