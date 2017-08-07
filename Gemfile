@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'twilio-ruby', '~> 5.1.0'
 gem 'active_model_serializers'
 gem 'middleware'
 gem 'redd'
