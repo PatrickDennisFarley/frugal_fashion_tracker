@@ -17,6 +17,7 @@ gem 'fog'
 gem 'fog-aws'
 gem 'rails', '~> 5.1.2'
 gem 'jquery-rails'
+gem 'dotenv-rails'
 gem 'pg', '0.20.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -29,7 +30,6 @@ gem 'rails-assets-foundation', source: 'https://rails-assets.org'
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'capybara'
   gem 'rspec-rails'
@@ -37,6 +37,7 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem 'webmock'
 end
 
 group :development do
