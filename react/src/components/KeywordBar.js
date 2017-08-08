@@ -29,7 +29,7 @@ class KeywordBar extends Component {
       this.setState({ query: responseData.body})
     })
     .catch(
-      console.log("you done goofed")
+      console.log("There was an error")
     )
   }
 
