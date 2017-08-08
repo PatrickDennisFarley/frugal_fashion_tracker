@@ -1,13 +1,15 @@
 require 'redd'
+require 'date'
+require 'pry'
 
 class Api::V1::PostsController < ApplicationController
   def all_posts
     session = Redd.it(
-      user_agent: 'Redd:FashionTexter:v1.0.0 (by /u/the4oclockhero)',
-      client_id:  'ylDT9JmKnj76CA',
-      secret:     'IWeJkCkF821w05gekSpUg0CPtaM',
-      username:   'the4oclockhero',
-      password:   'hv3kk444'
+      user_agent: ENV["USER_AGENT"],
+      client_id:  ENV["CLIENT_ID"],
+      secret:     ENV["SECRET"],
+      username:   ENV["USERNAME"],
+      password:   ENV["PASSWORD"]
     )
 
     sales = session.subreddit('frugalmalefashion').new
@@ -30,11 +32,7 @@ class Api::V1::PostsController < ApplicationController
       password:   'hv3kk444'
     )
 
-    queries = Query.where(user_id: current_user.id)
-    @keywords = []
-    queries.each do |query|
-      @keywords << query.body
-    end
+    @keywords = ["J.Crew", "Uniqlo"]
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
@@ -60,11 +58,7 @@ class Api::V1::PostsController < ApplicationController
       password:   'hv3kk444'
     )
 
-    queries = Query.where(user_id: current_user.id)
-    @keywords = []
-    queries.each do |query|
-      @keywords << query.body
-    end
+    @keywords = ["Finish Line", "J.Crew", "Uniqlo"]
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
@@ -89,11 +83,8 @@ class Api::V1::PostsController < ApplicationController
       username:   'the4oclockhero',
       password:   'hv3kk444'
     )
-    queries = Query.where(user_id: current_user.id)
-    @keywords = []
-    queries.each do |query|
-      @keywords << query.body
-    end
+
+    @keywords = ["J.Crew", "Uniqlo"]
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
@@ -117,11 +108,7 @@ class Api::V1::PostsController < ApplicationController
       password:   'hv3kk444'
     )
 
-    queries = Query.where(user_id: current_user.id)
-    @keywords = []
-    queries.each do |query|
-      @keywords << query.body
-    end
+    @keywords = ["Finish Line", "J.Crew", "Uniqlo"]
     @sales_hashes_array = []
     @keywords.each do |keyword|
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)

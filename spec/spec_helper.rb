@@ -96,4 +96,13 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  require 'webmock/rspec'
+  WebMock.disable_net_connect!(allow_localhost:true)
+  config.before(:each) do
+  stub_request(:post, "https://www.reddit.com/api/v1/access_token").
+     with(body: {"grant_type"=>"password", "password"=>"hv3kk444", "username"=>"the4oclockhero"},
+          headers: {'Authorization'=>'Basic eWxEVDlKbUtuajc2Q0E6SVdlSmtDa0Y4MjF3MDVnZWtTcFVnMENQdGFN', 'Connection'=>'Keep-Alive', 'Content-Length'=>'61', 'Content-Type'=>'application/x-www-form-urlencoded', 'Host'=>'www.reddit.com', 'User-Agent'=>'Redd:FashionTexter:v1.0.0 (by /u/the4oclockhero)'}).
+     to_return(status: 200, body: JSON.generate({title: 'Nike Air Force 1s on Sale! use code Shoes', link_flair: '[Deal/Sale]', created: '1502176403'}), headers: {})
+  end
 end

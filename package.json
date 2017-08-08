@@ -6,7 +6,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
-    "test": "node_modules/.bin/karma start karma.conf.js",
+    "test": "node_modules/.bin/karma start ./react/karma.conf.js",
     "start": "yarn run webpack -- --watch",
     "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
   },
@@ -53,6 +53,7 @@
     "file-loader": "^0.11.2",
     "glob": "^7.1.2",
     "js-yaml": "^3.9.0",
+    "moment": "^2.18.1",
     "path-complete-extname": "^0.1.0",
     "postcss-loader": "^2.0.6",
     "postcss-smart-import": "^0.7.5",
