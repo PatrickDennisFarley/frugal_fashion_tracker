@@ -1,5 +1,4 @@
 import DealTile from '../../src/components/DealTile';
-import AllPostsIndexContainer from '../../src/containers/AllPostsIndexContainer';
 import { mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
@@ -26,12 +25,8 @@ describe('DealTile displays info', () => {
     expect(wrapper.find('h3').text()).toBe('New Deal on Nike Shoes! Use code "running"');
   })
 
-  it('should render an h5 tag with the address', () => {
+  it('should render an h4 tag with the address', () => {
     expect(wrapper.find('h4')).toBePresent();
     expect(wrapper.find('h4').text()).toBe('[Deal/Sale]');
-  });
-  it('should render an p tag with the description', () => {
-    expect(wrapper.find('p')).toBePresent();
-    expect(wrapper.find('p').text()).toBe('Created at: 08-08-2017 03:13:23');
   });
 });

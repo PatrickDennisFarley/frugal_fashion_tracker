@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import * as moment from 'moment';
 
 const DealTile = (props) => {
 
@@ -14,7 +15,6 @@ const DealTile = (props) => {
             <h3><a className="deal-text" href={props.url}>{props.title}</a></h3>
             <h4>{props.link_flair}</h4>
             <p>Created at: {displayDate}</p>
-            {props.created}
           </div>
         </div>
       </div>

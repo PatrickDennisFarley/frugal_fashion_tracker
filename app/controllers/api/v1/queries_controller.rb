@@ -15,6 +15,11 @@ class Api::V1::QueriesController < ApplicationController
     end
   end
 
+  def destroy
+   data = JSON.parse(request.body.read)
+   remove_query = Query.destroy(params[:body])
+  end
+
   private
 
   def query_params

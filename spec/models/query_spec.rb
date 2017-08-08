@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Query, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_valid(:body).when('J.Crew', 'Nike') }
+  it { should_not have_valid(:body).when(nil, '') }
 end
