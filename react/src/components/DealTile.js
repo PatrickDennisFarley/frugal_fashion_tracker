@@ -12,10 +12,10 @@ const DealTile = (props) => {
       <div className="callout">
         <div className="row">
           <div className="small 10 columns">
-            <h3>{props.title}</h3>
-            <p><a className="deal-text" href={props.url}>{props.url}</a></p>
+            <h3><a className="deal-text" href={props.url}>{props.title}</a></h3>
             <h4>{props.link_flair}</h4>
             <p>Created at: {displayDate}</p>
+            {props.created}
           </div>
         </div>
       </div>
