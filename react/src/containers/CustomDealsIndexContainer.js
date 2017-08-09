@@ -7,20 +7,60 @@ class CustomDealsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      deals: []
+      deals: [],
+      filteredDeals: [],
+      query: ''
     }
+    this.filterDealList = this.filterDealList.bind(this)
+    this.handleAddKeyword = this.handleAddKeyword.bind(this)
+    this.handleQueryChange = this.handleQueryChange.bind(this)
   }
 
   componentDidMount() {
     fetch('/api/v1/posts/custom_deals',{credentials: 'same-origin' })
     .then(response => response.json())
     .then(body => {
-      this.setState({ deals: body.sales})
+      this.setState({ deals: body.sales, filteredDeals: body.sales })
     })
   }
 
+  handleAddKeyword() {
+    let payload = { body: this.state.query
+    }
+    fetch('/api/v1/queries', {
+      credentials: 'same-origin',
+      method: 'POST',
+      body: JSON.stringify(payload)
+    })
+    .then(response => response.json())
+    .then(responseData => {
+      this.setState({ query: responseData.body })
+    })
+    .catch(
+      console.log("There was an error")
+    )
+  }
+
+  filterDealList(searchString) {
+    let filteredDeals = [];
+
+    this.state.deals.forEach(deal => {
+      if(deal.title.toLowerCase().includes(searchString.toLowerCase())) {
+        filteredDeals.push(deal);
+      }
+    })
+    this.setState({filteredDeals: filteredDeals})
+  }
+
+  handleQueryChange (value) {
+    this.setState({
+      query: value
+    })
+    this.filterDealList(this.state.query)
+  }
+
   render() {
-    let deals = this.state.deals.map(deal => {
+    let deals = this.state.filteredDeals.map(deal => {
       return(
         <DealTile
           key={deal.id}
@@ -42,7 +82,8 @@ class CustomDealsIndexContainer extends Component {
           </ul>
         </div>
         <h1>Custom Deals Page</h1>
-        <KeywordBar />
+        <KeywordBar handleChange={this.handleQueryChange} handleSubmit={this.handleAddKeyword} query={this.state.query}/>
+        <br/>
         {deals}
       </div>
     )

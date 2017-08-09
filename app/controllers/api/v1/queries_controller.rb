@@ -1,7 +1,8 @@
 class Api::V1::QueriesController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-
+    @query = Query.where(user_id: current_user.id)
+    render json: @query
   end
 
   def create
@@ -16,8 +17,9 @@ class Api::V1::QueriesController < ApplicationController
   end
 
   def destroy
-   data = JSON.parse(request.body.read)
-   remove_query = Query.destroy(params[:body])
+   Query.destroy(params[:id])
+   @query = Query.where(user_id: current_user.id)
+   render json: @query
   end
 
   private

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'static_pages#index'
+  get '/keywords', to: 'static_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :deals
   resources :all_posts
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
         get 'discussions', on: :collection
         get 'reviews', on: :collection
       end
-      resources :queries, only: [:create, :index]
+      resources :queries, only: [:create, :index, :destroy]
     end
   end
 end

@@ -3,13 +3,13 @@ require "redd"
 
 RSpec.describe Api::V1::PostsController, type: :controller do
   include Devise::Test::ControllerHelpers
-  
+
   describe "GET#all_posts" do
     it "should return a list of all the posts" do
 
       get :all_posts
       returned_json = JSON.parse(response.body)
-binding.pry
+
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 

@@ -14,7 +14,7 @@ const DealTile = (props) => {
           <div className="small 10 columns">
             <h3><a className="deal-text" href={props.url}>{props.title}</a></h3>
             <h4>{props.link_flair}</h4>
-            <p>Created at: {displayDate}</p>
+            <p>{displayDate}</p>
           </div>
         </div>
       </div>
