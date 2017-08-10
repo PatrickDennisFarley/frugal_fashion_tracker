@@ -1,4 +1,4 @@
-![Build Status](https://app.codeship.com/projects/8d9bc930-5843-0135-0fa3-36f0cd9b538f/status?branch=master)
+[ ![Codeship Status for PatrickDennisFarley/frugal_fashion_tracker](https://app.codeship.com/projects/e8ded690-5dac-0135-c5eb-1a2b288d7643/status?branch=master)](https://app.codeship.com/projects/238277)
 ![Code Climate](https://codeclimate.com/github/PatrickDennisFarley/frugal_fashion_tracker.png)
 ![Coverage Status](https://coveralls.io/repos/PatrickDennisFarley>/frugal_fashion_tracker/badge.png)
 # README
