@@ -24,6 +24,8 @@
 </ul>
 
 
+
+
 <h5>Technologies</h5>
 <ul>
 <li>Backend: Rails 5.1.2</li>
