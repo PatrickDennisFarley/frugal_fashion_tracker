@@ -2,13 +2,6 @@ require 'redd'
 
 class Api::V1::PostsController < ApplicationController
   def all_posts
-    puts (
-       user_agent: ENV["USER_AGENT"],
-       client_id:  ENV["CLIENT_ID"],
-       secret:     ENV["SECRET"],
-       username:   ENV["USERNAME"],
-       password:   ENV["PASSWORD"]
-    )
 
     session = Redd.it(
        user_agent: ENV["USER_AGENT"],
