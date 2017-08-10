@@ -24,6 +24,18 @@ ul.menu {
 
 .menu .menu-text {
   color: cyan;
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.menu .menu-text-large {
+  color: cyan;
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 1.5em;
+}
+
+.menu .menu-item-text {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
 }
 
 a {
@@ -36,5 +48,26 @@ a {
 
 .sub-menu-text {
   text-align: justify;
+  font-family: 'Nunito', sans-serif;
+}
+
+h3 {
+  font-family: 'Nunito', sans-serif;
+}
+
+h4 {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
+}
+
+.button {
+  background-color: teal;
 }

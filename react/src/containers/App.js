@@ -7,7 +7,8 @@ import CustomReviewsIndexContainer from './CustomReviewsIndexContainer';
 import CustomDiscussionsIndexContainer from './CustomDiscussionsIndexContainer';
 import DealsIndexContainer from './DealsIndexContainer';
 import DiscussionsIndexContainer from './DiscussionsIndexContainer';
-import ReviewsIndexContainer from './ReviewsIndexContainer'
+import ReviewsIndexContainer from './ReviewsIndexContainer';
+import KeywordsContainer from './KeywordsContainer'
 
 
 const App = props => {
@@ -22,6 +23,7 @@ const App = props => {
       <Route path='/deals' component={DealsIndexContainer}/>
       <Route path='/discussions' component={DiscussionsIndexContainer}/>
       <Route path='/reviews' component={ReviewsIndexContainer}/>
+      <Route path='/keywords' component={KeywordsContainer}/>
     </Router>
   )
 }

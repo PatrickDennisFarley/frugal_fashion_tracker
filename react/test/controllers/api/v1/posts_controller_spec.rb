@@ -3,8 +3,6 @@ require "rails_helper"
 
  RSpec.describe Api::V1::PostsController, type: :controller do
    include Devise::Test::ControllerHelpers
-   # let!(:first_post) { Submission.create(id: 1, title: "Nike Air Force 1's on Sale! use code Shoes", link_flair: "[Deal/Sale]", created: '1502176403') }
-   # let!(:second_post) { Submission.create(id: 2, title: "Review of GAP Selvedge Denim", link_flair: "[Review]", created: '1502231529') }
 
    describe "GET#all_posts" do
      it "should return a list of all the posts" do

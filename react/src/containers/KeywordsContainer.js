@@ -1,51 +1,71 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-// import RemoveKeyword from '../components/RemoveKeyword';
+import RemoveKeyword from '../components/RemoveKeyword';
 
-class KeywordContainer extends Component {
+class KeywordsContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       keywords: []
     }
+    this.handleDeleteKeyword = this.handleDeleteKeyword.bind(this)
+  }
+
+  handleDeleteKeyword(id) {
+    let keywordsArray = []
+    fetch(`/api/v1/queries/${id}`, {
+      credentials: 'same-origin',
+      method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(body => {
+      body.forEach(entry => {
+        keywordsArray.push(entry)
+      })
+      this.setState({ keywords: keywordsArray })
+    })
   }
 
   componentDidMount() {
+    let keywordsArray = []
     fetch('/api/v1/queries',{credentials: 'same-origin' })
     .then(response => response.json())
     .then(body => {
-      this.setState({ keywords: body.queries})
+      body.forEach(entry => {
+        keywordsArray.push(entry)
+      })
+      this.setState({ keywords: keywordsArray })
     })
   }
 
   render() {
-    let keywords = this.state.keywords.map(keywords => {
+    let keywords = this.state.keywords.map(keyword => {
+      let handleClick = () => { this.handleDeleteKeyword(keyword.id) }
       return(
+        <div key={keyword.id}>
+          <h3>{keyword.body}</h3>
+          <div>
+            <RemoveKeyword
+              handleClick={handleClick}
+            />
+          </div>
+        </div>
 
-        <DealTile
-          key={deal.id}
-          title={deal.title}
-          url={deal.url}
-          created={deal.created}
-          link_flair={deal.link_flair_text}
-        />
       )
     })
 
-    return (
+    return(
       <div className="tile-box">
         <div className="row">
-          <ul className="menu horizontal">
-            <li><Link className="sub-menu-text" href="/all_posts">All Posts</Link></li>
-            <li><Link className="sub-menu-text" href="/deals">All Deals</Link></li>
-            <li><Link className="sub-menu-text" href="/reviews">All Reviews</Link></li>
-          </ul>
+          <div className="small 10 columns">
+            <h1>Your Keywords</h1>
+            <br/>
+            {keywords}
+          </div>
         </div>
-        <h1>All Discussions</h1>
-        {deals}
       </div>
     )
   }
 }
 
-export default KeywordContainer;
+export default KeywordsContainer;
