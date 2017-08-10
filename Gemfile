@@ -5,10 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'twilio-ruby', '~> 5.1.0'
 gem 'active_model_serializers'
 gem 'middleware'
+gem 'dotenv-rails'
 gem 'redd'
+gem 'twilio-ruby', '~> 5.1.0'
 gem 'carrierwave'
 gem 'devise'
 gem 'mini_magick', '~> 4.3'
@@ -17,7 +18,6 @@ gem 'fog'
 gem 'fog-aws'
 gem 'rails', '~> 5.1.2'
 gem 'jquery-rails'
-gem 'dotenv-rails'
 gem 'pg', '0.20.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
