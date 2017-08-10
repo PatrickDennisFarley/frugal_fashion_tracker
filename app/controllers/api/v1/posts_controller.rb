@@ -23,14 +23,12 @@ class Api::V1::PostsController < ApplicationController
 
   def custom_deals
     session = Redd.it(
-       user_agent: 'Redd:FashionTexter:v1.0.0 (by /u/the4oclockhero)',
-       client_id:  'ylDT9JmKnj76CA',
-       secret:     'IWeJkCkF821w05gekSpUg0CPtaM',
-       username:   'the4oclockhero',
-       password:   'hv3kk444'
+       user_agent: ENV["USER_AGENT"],
+       client_id:  ENV["CLIENT_ID"],
+       secret:     ENV["SECRET"],
+       username:   ENV["USERNAME"],
+       password:   ENV["PASSWORD"]
     )
-puts session
-
 
     queries = Query.where(user_id: current_user.id)
     @keywords = []
