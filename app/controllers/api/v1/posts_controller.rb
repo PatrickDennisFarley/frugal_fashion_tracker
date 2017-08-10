@@ -30,6 +30,7 @@ class Api::V1::PostsController < ApplicationController
        password:   ENV["PASSWORD"]
     )
 
+
     queries = Query.where(user_id: current_user.id)
     @keywords = []
     queries.each do |query|
