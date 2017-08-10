@@ -14,13 +14,14 @@
 
 require 'twilio-ruby'
 
+
 # desc "Sends a notification to users when they have a new custom post."
 # task :send_notifications do
 #
 # end
 
-TWILIO_ACCOUNT_SID='ACd5e15053a465d2a88f379a23366c5e00'
-TWILIO_AUTH_TOKEN='ad544c2b4223dea0d3a75789d7ae74e0'
+TWILIO_ACCOUNT_SID=ENV["TWILIO_ACCOUNT_SID"]
+TWILIO_AUTH_TOKEN=ENV["TWILIO_AUTH_TOKEN"]
 
   @client = Twilio::REST::Client.new(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
   @client.messages.create({
