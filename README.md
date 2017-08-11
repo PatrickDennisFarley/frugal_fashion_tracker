@@ -17,14 +17,9 @@
 <li>Users can view all posts or filter by all deals/discussions/reviews.</li>
 <li>Users can add custom brand keywords.</li>
 <li>Users can view customized result pages with only posts relating to their chosen keywords.</li>
-<li>Users can edit reviews they have created.</li>
-<li>Users can upvote or downvote individual reviews based on helpfulness.</li>
-<li>Users are notified via email of any upvote/downvote activity on reviews they have posted.</li>
-<li>Admins can delete any review.</li>
+<li>Users can remove custom brand keywords on the keyword page</li>
+<li>Users can receive a daily text notifying them of any new sales for their custom keywords.</li>
 </ul>
-
-
-
 
 <h5>Technologies</h5>
 <ul>
@@ -33,6 +28,7 @@
 <li>User Auth: Devise</li>
 <li>Image Uploader: CarrierWave</li>
 <li>Image Hosting: Amazon Web Services</li>
+<li>Text Integration: Twilio, Thor, & Heroku Scheduler</li>
 <li>Styling: Foundation</li>
 <li>Database: Postgres</li>
 <li>Testing: RSpec, Capybara, Jasmine, Karma, Enzyme</li>
