@@ -20,12 +20,11 @@ class CustomPosts
       sales = session.subreddit('frugalmalefashion').search(keyword, sort: :new)
       sales_array = sales.to_ary
       sales_array.each do |sale|
-        sale_hash = {title: sale.title, url: sale.url, created: sale.created, link_flair_text: sale.link_flair_text}
+        sale_hash = { title: sale.title, url: sale.url, created: sale.created, link_flair_text: sale.link_flair_text }
         @sales_hashes_array << sale_hash
       end
     end
-    @sorted_sales = @sales_hashes_array.sort_by { |sale| sale[:created]}.reverse
-
+    @sorted_sales = @sales_hashes_array.sort_by { |sale| sale[:created] }.reverse
     return @sorted_sales.first[:created]
   end
 end
