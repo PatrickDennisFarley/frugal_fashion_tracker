@@ -31,7 +31,6 @@ class Api::V1::PostsController < ApplicationController
        password:   ENV["PASSWORD"]
     )
 
-
     queries = Query.where(user_id: current_user.id)
     @keywords = []
     queries.each do |query|
@@ -84,7 +83,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def custom_posts
-
     session = Redd.it(
        user_agent: ENV["USER_AGENT"],
        client_id:  ENV["CLIENT_ID"],
