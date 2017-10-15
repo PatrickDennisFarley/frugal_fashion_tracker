@@ -1,4 +1,5 @@
 require 'redd'
+require 'pry'
 
 class Api::V1::PostsController < ApplicationController
   def all_posts
@@ -19,6 +20,7 @@ class Api::V1::PostsController < ApplicationController
       sales_hashes_array << sale_hash
     end
     @all_posts = {sales: sales_hashes_array}
+    binding.pry
     render json: @all_posts
   end
 

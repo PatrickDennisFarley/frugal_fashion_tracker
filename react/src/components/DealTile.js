@@ -9,7 +9,7 @@ const DealTile = (props) => {
 
   return(
     <div>
-      <div className="callout">
+      <div className="callout" id="props.key">
         <div className="row">
           <div className="small 10 columns">
             <h3><a className="deal-text" href={props.url}>{props.title}</a></h3>

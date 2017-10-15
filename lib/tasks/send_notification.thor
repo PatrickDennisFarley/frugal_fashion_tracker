@@ -10,7 +10,6 @@ class SendNotification < Thor
     twilio_account_sid=ENV["TWILIO_ACCOUNT_SID"]
     twilio_auth_token=ENV["TWILIO_AUTH_TOKEN"]
     User.all.each { |user|
-      binding.pry
       if CustomPosts.latest_custom_post > (Time.now.to_i - 86400)
         @client = Twilio::REST::Client.new(twilio_account_sid, twilio_auth_token)
         @client.messages.create({
